@@ -1,0 +1,102 @@
+import Icon from '@material-ui/core/Icon';
+import { makeStyles } from '@material-ui/styles';
+import Paper from '@material-ui/core/Paper';
+import Container from '@material-ui/core/Container';
+import Typography from '@material-ui/core/Typography';
+import { Link } from 'react-router-dom'
+import Grid from '@material-ui/core/Grid'
+import {useState} from 'react'
+import 'fontsource-roboto'
+
+const useStyles = makeStyles({
+    root: {
+        height:'80%',
+        width:'80%'
+    },
+    paper:{
+        height:400,
+        width:400,
+        padding:20,
+    },
+    paper1:{
+        background:'black',
+    },
+    container:{
+        height:'100vh',
+    },
+    link:{
+        textDecoration:'none'
+    }
+})
+
+const initShadow=10
+const howerShadow=2
+
+
+export default function FirstPage(){
+    const classes = useStyles()
+    const [shadow1,setShadow1]=useState(initShadow)
+    const [shadow2,setShadow2]=useState(initShadow)
+
+    return(
+        <Container>
+                <Grid container 
+                    spacing={3} 
+                    justify="center"
+                    alignItems="center"
+                    className={classes.container}
+                >
+                    <Grid item>
+                        <Link 
+                            to={'/login/teacher'}
+                            className={classes.link}
+                        >
+                            <Paper
+                                square="false"
+                                elevation={shadow1}
+                                className={classes.paper}
+                                onMouseEnter={()=>setShadow1(howerShadow)}
+                                onMouseLeave={()=>setShadow1(initShadow)}
+                            >
+                                <Icon >
+                                    <img className={classes.root} src="/teacher1.png"/>
+                                </Icon>
+                                <Typography
+                                    variant="h6"
+                                >
+                                    I AM A TEACHER
+                                </Typography>
+                            </Paper>
+                        </Link>
+                    </Grid>
+
+                    <Grid item>
+                        <Link 
+                            to={'/login/student'}
+                            className={classes.link}
+                        >
+
+                            <Paper
+                                square="false"
+                                elevation={shadow2}
+                                className={classes.paper}
+                                onMouseEnter={()=>setShadow2(howerShadow)}
+                                onMouseLeave={()=>setShadow2(initShadow)}
+                            >
+                                <Icon>
+                                    <img  className={classes.root} src="/student.svg"/>
+                                </Icon>
+                                <Typography
+                                    variant="h6"
+                                >
+                                    I AM A STUDENT
+                                </Typography>
+                            </Paper>
+                        </Link>
+                    </Grid>
+                    </Grid>
+
+        </Container>
+        
+      )
+  }

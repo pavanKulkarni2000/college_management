@@ -1,14 +1,16 @@
 import React from "react";
-import { Switch, Route, BrowserRouter, Redirect } from "react-router-dom";
+import { Switch, Route, BrowserRouter} from "react-router-dom";
 import SignIn from "./SignIn";
 import Home from "./Home";
+import FirstPage from "./FirstPage";
 
 export default function Router() {
   return (
     <BrowserRouter>
       <Switch>
-        <Redirect from="/" exact to="/login" />
-        <Route path="/login" exact component={SignIn} />
+        <Route path="/" exact component={FirstPage} />
+        <Route path="/login/teacher"  exact render={(props)=> <SignIn {...props} isTeacher={true}/>} />
+        <Route path="/login/student"  exact render={(props)=><SignIn {...props} isTeacher={false}/>} />
         <Route path="/home" exact component={Home} />
       </Switch>
     </BrowserRouter>

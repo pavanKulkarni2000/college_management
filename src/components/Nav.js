@@ -61,7 +61,7 @@ export default function Nav({open,onChange}){
                     <ListItemIcon>
                         <AiTwotoneNotification size="20px"/>
                     </ListItemIcon>
-                    <ListItemText primary={"New dept. post"}/>
+                    <ListItemText primary={"Placement"}/>
                 </ListItem>
                 <ListItem button>
                     <ListItemIcon>
