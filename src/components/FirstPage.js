@@ -26,6 +26,9 @@ const useStyles = makeStyles({
     },
     link:{
         textDecoration:'none'
+    },
+    typo:{
+        padding:20,
     }
 })
 
@@ -63,6 +66,7 @@ export default function FirstPage(){
                                 </Icon>
                                 <Typography
                                     variant="h6"
+                                    className={classes.typo}
                                 >
                                     I AM A TEACHER
                                 </Typography>
@@ -88,6 +92,7 @@ export default function FirstPage(){
                                 </Icon>
                                 <Typography
                                     variant="h6"
+                                    className={classes.typo}
                                 >
                                     I AM A STUDENT
                                 </Typography>

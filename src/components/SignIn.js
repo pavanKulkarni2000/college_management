@@ -31,6 +31,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+function handleClick(e,checker,email,password,setEmail,setPassword){
+  e.preventDefault()
+  if(checker){
+    setEmail('')
+    setPassword('')
+  }
+  else{
+    setEmail('')
+    setPassword('')
+  }
+}
+
 export default function SignIn(props) {
   const classes = useStyles();
   const [email,setEmail]=useState("");
@@ -40,8 +52,6 @@ export default function SignIn(props) {
 
   if(props.isTeacher) text="TEACHER"+text
   else text="STUDENT"+text
-  
-  console.log(props)
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -57,12 +67,13 @@ export default function SignIn(props) {
             variant="outlined"
             margin="normal"
             value={email}
-            onChange={(e)=>setEmail(e.value)}
+            onChange={(e)=>setEmail(e.target.value)}
             required
             fullWidth
             id="email"
-            label="Email Address"
+            label="Email"
             name="email"
+            type="email"
             autoComplete="email"
             autoFocus
           />
@@ -70,7 +81,9 @@ export default function SignIn(props) {
             variant="outlined"
             margin="normal"
             value={password}
-            onChange={(e)=>setPassword(e.value)}
+            onChange={(e)=>{
+              setPassword(e.target.value)
+            }}
             required
             fullWidth
             name="password"
@@ -85,7 +98,7 @@ export default function SignIn(props) {
             variant="contained"
             color="primary"
             className={classes.submit}
-            href="/home"
+            onClick={(e)=>handleClick(e,props.isTeacher,email,password,setEmail,setPassword)}
           >
             Sign In
           </Button>

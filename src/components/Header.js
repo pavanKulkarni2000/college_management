@@ -77,6 +77,9 @@ const useStyles = makeStyles((theme) => ({
       display: 'none',
     },
   },
+  color:{
+    background:'black'
+  }
 }));
 
 export default function PrimarySearchAppBar({navOpen,onClickMenu}) {
@@ -111,7 +114,9 @@ export default function PrimarySearchAppBar({navOpen,onClickMenu}) {
   const menuId = 'primary-search-account-menu';
   return (
     <div className={classes.grow}>
-      <AppBar position="static">
+      <AppBar 
+        className={classes.color}
+        position="static">
         <Toolbar>
           <IconButton
             edge="start"
