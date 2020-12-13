@@ -10,6 +10,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import {Link} from 'react-router-dom';
 import {useState} from 'react';
+import { useHistory } from "react-router-dom";
+import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -31,15 +33,43 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function handleClick(e,checker,email,password,setEmail,setPassword){
+function handleClick(e,checker,email,password,setEmail,setPassword,setWrong,history){
   e.preventDefault()
   if(checker){
     setEmail('')
     setPassword('')
+    axios.post('auth/instructor',{email,password})
+      .then(result=>{
+        localStorage.setItem('x-auth-token',result.data.token)
+        setWrong(false)
+      })
+      .catch(err=>{
+        console.log(err.response)
+        if(err.response && err.response.status===400)
+          setWrong(true)
+        else{
+          console.log(err)
+          alert('Sorry There is something wrong with the server')
+        }
+      })
   }
   else{
     setEmail('')
     setPassword('')
+    axios.post('auth/student',{email,password})
+      .then(result=>{
+        localStorage.setItem('x-auth-token',result.data.token)
+        setWrong(false)
+        history.push('/home/student')
+      })
+      .catch(err=>{
+          if(err.response && err.response.status===400)
+            setWrong(true)
+          else{
+            console.log(err)
+            alert('Sorry There is something wrong with the server')
+          }
+      })
   }
 }
 
@@ -47,11 +77,14 @@ export default function SignIn(props) {
   const classes = useStyles();
   const [email,setEmail]=useState("");
   const [password,setPassword]=useState("");
+  const [isWrong,setWrong] = useState(false)
 
   let text=" SIGN IN";
+  const history = useHistory()
 
   if(props.isTeacher) text="TEACHER"+text
   else text="STUDENT"+text
+
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -92,13 +125,24 @@ export default function SignIn(props) {
             id="password"
             autoComplete="current-password"
           />
+          {
+            isWrong?
+            <Typography
+              color="secondary"
+              variant='subtitle1'
+            >
+              *Wrong Email or Password
+            </Typography>:
+            <br/>
+          }
+          
           <Button
             type="submit"
             fullWidth
             variant="contained"
             color="primary"
             className={classes.submit}
-            onClick={(e)=>handleClick(e,props.isTeacher,email,password,setEmail,setPassword)}
+            onClick={(e)=>handleClick(e,props.isTeacher,email,password,setEmail,setPassword,setWrong,history)}
           >
             Sign In
           </Button>

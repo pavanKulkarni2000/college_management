@@ -61,8 +61,9 @@ export default function FirstPage(){
                                 onMouseEnter={()=>setShadow1(howerShadow)}
                                 onMouseLeave={()=>setShadow1(initShadow)}
                             >
-                                <Icon >
-                                    <img className={classes.root} src="/teacher1.png"/>
+                                <Icon 
+                                    className={classes.root}>
+                                    <img  src="/assets/teacher.svg"/>
                                 </Icon>
                                 <Typography
                                     variant="h6"
@@ -87,8 +88,9 @@ export default function FirstPage(){
                                 onMouseEnter={()=>setShadow2(howerShadow)}
                                 onMouseLeave={()=>setShadow2(initShadow)}
                             >
-                                <Icon>
-                                    <img  className={classes.root} src="/student.svg"/>
+                                <Icon
+                                    className={classes.root}>
+                                    <img src="/assets/student.svg"/>
                                 </Icon>
                                 <Typography
                                     variant="h6"

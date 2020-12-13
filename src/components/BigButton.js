@@ -28,7 +28,7 @@ export default function BigButton(props) {
 
     return (
         <Link 
-            to={'/login'}
+            to={props.link}
             className={classes.link}
         >
             <Paper

@@ -1,8 +1,8 @@
 import React from "react";
 import { Switch, Route, BrowserRouter} from "react-router-dom";
 import SignIn from "./SignIn";
-import Home from "./Home";
 import FirstPage from "./FirstPage";
+import StudentRouter from './StudentRouter'
 
 export default function Router() {
   return (
@@ -11,7 +11,7 @@ export default function Router() {
         <Route path="/" exact component={FirstPage} />
         <Route path="/login/teacher"  exact render={(props)=> <SignIn {...props} isTeacher={true}/>} />
         <Route path="/login/student"  exact render={(props)=><SignIn {...props} isTeacher={false}/>} />
-        <Route path="/home" exact component={Home} />
+        <Route path="/home/student" component={StudentRouter} />
       </Switch>
     </BrowserRouter>
   );

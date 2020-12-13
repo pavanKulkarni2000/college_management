@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import Header from './Header';
+import React, { useState,useEffect } from 'react';
 import BigButton from './BigButton';
 import {FaChalkboardTeacher} from "react-icons/fa"
 import {BiChalkboard} from "react-icons/bi"
@@ -9,8 +8,15 @@ import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/styles';
 import {BsPencilSquare} from 'react-icons/bs'
 import Container from '@material-ui/core/Container'
+import { useHistory } from 'react-router-dom';
+import axios from 'axios'
+import { Icon } from '@material-ui/core';
 
 const useStyles = makeStyles({
+    root:{
+        height:'70%',
+        width:'70%',
+    },
     container:{
         height:'90vh',
     },
@@ -22,12 +28,12 @@ const useStyles = makeStyles({
 const lgColumns=4
 
 export default function Home(){
-    const [navOpen, setNav]=useState(false);
     const classes = useStyles()
-
+    const history = useHistory()
+    
     return (
         <div>
-            <Header navOpen={navOpen} onClickMenu={setNav}/>
+            
             <Container
                 className={classes.container}>
 
@@ -40,32 +46,36 @@ export default function Home(){
             >
                 <Grid item lg={lgColumns}>
                     <BigButton 
-                        component={<BiChalkboard size="120px"/>}
-                        title={'DEPARTMENT POST'}
+                        component={<Icon className={classes.root}><img src="/assets/department.svg"/></Icon>}
+                        title={'Notice Board'}
+                        link='/home/student/department'
                     />
                 </Grid>
                 <Grid item lg={lgColumns}>
                     <BigButton 
-                        component={<FaChalkboardTeacher size="120px"/>}
-                        title={'CLASS POST'}
+                        component={<Icon className={classes.root}><img src="/assets/classroom.svg"/></Icon>}
+                        title={'Class Post'}
+                        link={'/home/student/class'}
                     />
                 </Grid>
                 <Grid item lg={lgColumns}>
                     <BigButton 
-                        component={<AiTwotoneNotification size="120px"/>}
-                        title={'PLACEMENT'}
+                        component={<Icon className={classes.root}><img src="/assets/placement.svg"/></Icon>}
+                        title={'Placement'}
+                        link={'/home/student/placement'}
                     />
                 </Grid>
                 <Grid item lg={lgColumns}>
                     <BigButton 
-                        component={<ImBooks size="120px"/>}
-                        title={'COURSE NOTES'}
+                        component={<Icon className={classes.root}><img src="/assets/notes.svg"/></Icon>}
+                        title={'Course Notes'}
                     />
                 </Grid>
                 <Grid item lg={lgColumns}>
                     <BigButton 
-                        component={<BsPencilSquare size="120px"/>}
-                        title={'CREATE POST'}
+                        component={<Icon className={classes.root}><img src="/assets/create.svg"/></Icon>}
+                        title={'Add Company'}
+                        link={'/home/student/creation'}
                     />
                 </Grid>
             </Grid>

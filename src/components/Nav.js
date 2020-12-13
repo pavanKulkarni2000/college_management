@@ -12,13 +12,9 @@ const useStyles=makeStyles((theme)=>({
     drawerPaper: {width: 'inherit'}
 }))
 
-export default function Nav({open,onChange}){
+export default function Nav(){
     
     const classes=useStyles();
-
-    function handleDrawerToggle() {
-        onChange(!open)
-      }
 
     return (
         <div
@@ -28,8 +24,7 @@ export default function Nav({open,onChange}){
             style={{ width: '220px'}}
             variant="temporary"
             anchor="left"
-            open={open}
-            onClose={handleDrawerToggle}
+            open={true}
             classes={{paper: classes.drawerPaper}}
             >
             <List>
