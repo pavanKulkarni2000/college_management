@@ -8,8 +8,9 @@ import { Container, Typography } from '@material-ui/core'
 
 const useStyles = makeStyles({
     typo:{
-        margin:'10px',
-        padding:'20px',
+        margin:'20px',
+        padding:'10px',
+        color:'#523e02'
     }
 })
 

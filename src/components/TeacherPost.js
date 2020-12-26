@@ -21,8 +21,9 @@ export default function DepartmentPost({ user }) {
 
   useEffect(() => {
     axios
-      .get("/department/post")
+      .get("/department/post/all")
       .then((result) => {
+        console.log(result.data);
         setPosts(result.data);
       })
       .catch((err) => {
@@ -37,7 +38,12 @@ export default function DepartmentPost({ user }) {
 
   const feed = posts.map((post) => (
     <Grid item xs={12} justify="center">
-      <Post key={post.p_id} title={post.title} message={post.message} />
+      <Post
+        year={post.year}
+        key={post.p_id}
+        title={post.title}
+        message={post.message}
+      />
     </Grid>
   ));
   return (

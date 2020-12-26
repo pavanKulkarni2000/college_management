@@ -1,18 +1,41 @@
 import React from "react";
-import { Switch, Route, BrowserRouter} from "react-router-dom";
+import { Switch, Route, BrowserRouter, withRouter } from "react-router-dom";
 import SignIn from "./SignIn";
 import FirstPage from "./FirstPage";
-import StudentRouter from './StudentRouter'
+import StudentRouter from "./StudentRouter";
+import TeacherRouter from "./TeacherRouter";
+import AdminRouter from "./AdminRouter";
 
-export default function Router() {
+function Router() {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route path="/" exact component={FirstPage} />
-        <Route path="/login/teacher"  exact render={(props)=> <SignIn {...props} isTeacher={true}/>} />
-        <Route path="/login/student"  exact render={(props)=><SignIn {...props} isTeacher={false}/>} />
-        <Route path="/home/student" component={StudentRouter} />
-      </Switch>
-    </BrowserRouter>
+    <Switch>
+      <Route path="/" exact component={FirstPage} />
+      <Route path="/home/admin" component={AdminRouter} />
+      <Route path="/home/student" component={StudentRouter} />
+      <Route path="/home/teacher" component={TeacherRouter} />
+      <Route
+        path="/login/teacher"
+        exact
+        render={(props) => (
+          <SignIn {...props} isTeacher={true} isAdmin={false} />
+        )}
+      />
+      <Route
+        path="/login/student"
+        exact
+        render={(props) => (
+          <SignIn {...props} isTeacher={false} isAdmin={false} />
+        )}
+      />
+      <Route
+        path="/login/admin"
+        exact
+        render={(props) => (
+          <SignIn {...props} isTeacher={false} isAdmin={true} />
+        )}
+      />
+    </Switch>
   );
 }
+
+export default withRouter(Router);

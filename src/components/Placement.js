@@ -9,7 +9,7 @@ import SaveSharpIcon from '@material-ui/icons/SaveSharp';
 
 const useStyles = makeStyles({
     root:{
-        margin:'20px'
+        margin:'30px'
     }
 })
 
