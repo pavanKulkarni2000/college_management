@@ -30,9 +30,10 @@ export default function ScanImage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(image);
+    const fd = new FormData();
+    fd.append("image", image);
     axios
-      .post("http://e932da84cc24.ngrok.io/digitize", image)
+      .post("http://0761c03e94da.ngrok.io/digitize", fd)
       .then((results) => {
         console.log(results);
       })
@@ -52,7 +53,7 @@ export default function ScanImage() {
       <Typography variant="h4">Upload Image to be Processed</Typography>
       <form onSubmit={handleSubmit}>
         <input
-          accept="image/*"
+          accept="image/*,.pdf"
           required
           onChange={handleChange}
           className={classes.input}
