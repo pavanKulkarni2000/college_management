@@ -7,6 +7,7 @@ import StudentCourse from "./StudentCourse";
 import AdminNav from "./AdminNav";
 import { Route, useHistory } from "react-router-dom";
 import AddCourse from "./AddCourse";
+import DesignForm from "./DesignForm";
 import axios from "axios";
 import Loading from "./Loading";
 import { trackPromise } from "react-promise-tracker";
@@ -59,6 +60,7 @@ export default function TeacherRouter() {
         <Route path="/home/admin/teacher/" exact component={EditTeacher} />
         <Route path="/home/admin/register/" exact component={StudentCourse} />
         <Route path="/home/admin/course/" exact component={AddCourse} />
+        <Route path="/home/admin/design/" exact component={DesignForm} />
         <Loading />
       </main>
     </div>

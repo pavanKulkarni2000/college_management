@@ -99,7 +99,7 @@ export default function CreateClassPost() {
             value={course}
             onChange={(e) => setCourse(e.target.value)}
             label="Course"
-            helperText="Enter the Course for which you want to put the message"
+            helperText="Select the course to add a post"
             required
           >
             {items}

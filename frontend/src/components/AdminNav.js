@@ -16,6 +16,7 @@ import {
   AiOutlineLogout,
   AiOutlineFolderAdd,
   AiOutlineUserAdd,
+  AiOutlineForm,
 } from "react-icons/ai";
 import { useHistory, Link } from "react-router-dom";
 import PopUp from "./PopUp";
@@ -82,6 +83,12 @@ export default function Nav() {
                 <AiOutlineFolderAdd size="25px" className={classes.icons} />
               </ListItemIcon>
               <ListItemText primary={"Add Course"} />
+            </ListItem>
+            <ListItem button component={Link} to="/home/admin/design">
+              <ListItemIcon>
+                <AiOutlineForm size="25px" className={classes.icons} />
+              </ListItemIcon>
+              <ListItemText primary={"Design form"} />
             </ListItem>
             <Divider classes={{ root: classes.divider }} />
             <ListItem button onClick={() => setOpen(true)}>

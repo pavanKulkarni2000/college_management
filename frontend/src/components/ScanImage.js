@@ -95,13 +95,16 @@ export default function ScanImage({ user }) {
     const fd = new FormData();
     fd.append("image", acceptedFiles[0]);
     fd.append("id", user.i_id);
+    console.log("trying to post");
     trackPromise(
       axios
-        .post("http://db569d1cea9d.ngrok.io/digitize", fd, {
+        .post("http://3a0e5ae9a3fa.ngrok.io/digitize", fd, {
           headers: { "x-auth-token": localStorage["x-auth-token"] },
         })
         .then((results) => {
           console.log(results.data);
+          alert("digitization successfull!!")
+          
         })
         .catch((err) => {
           if (err.response && err.response.status === 400) {
@@ -136,7 +139,7 @@ export default function ScanImage({ user }) {
             {files}
           </aside>
         </div>
-        <Button type="submit" variant="contained" color="primary" size="large">
+        <Button type="submit" onClick={handleSubmit} variant="contained" color="primary" size="large">
           Submit
         </Button>
       </form>
