@@ -103,7 +103,7 @@ export default function DesignForm() {
     console.log("trying to post");
     trackPromise(
       axios
-        .post("http://3a0e5ae9a3fa.ngrok.io/design", fd, {
+        .post("http://7b24b46f8b74.ngrok.io/design", fd, {
           headers: { "x-auth-token": localStorage["x-auth-token"] },
         })
         .then((results) => {
@@ -163,11 +163,12 @@ export default function DesignForm() {
               className={classes.title}
               color="textSecondary"
               gutterBottom
+              variant="h4"
             >
               JSON
             </Typography>
 
-            <Paper className={classes.item} variant="outlined">
+            <Paper className={classes.item} variant="outlined" align="left">
             <Typography
               style={{ display: "inline-block" }}
               className={classes.pos}
