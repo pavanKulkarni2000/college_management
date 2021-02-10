@@ -30,7 +30,7 @@ export default function GetObjects({ user }) {
   const [records, setRecords] = useState([]);
   useEffect(() => {
     if (!user) return;
-    const url = `http://3a0e5ae9a3fa.ngrok.io/digitize/${user.i_id}`;
+    const url = `http://e6a888671f20.ngrok.io/digitize/${user.i_id}`;
     trackPromise(
       axios
         .get(url, {

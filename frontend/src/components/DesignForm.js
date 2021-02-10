@@ -103,7 +103,7 @@ export default function DesignForm() {
     console.log("trying to post");
     trackPromise(
       axios
-        .post("http://7b24b46f8b74.ngrok.io/design", fd, {
+        .post("http://e6a888671f20.ngrok.io/design", fd, {
           headers: { "x-auth-token": localStorage["x-auth-token"] },
         })
         .then((results) => {

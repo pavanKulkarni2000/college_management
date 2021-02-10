@@ -99,7 +99,7 @@ export default function ScanImage({ user }) {
     console.log("trying to post");
     trackPromise(
       axios
-        .post("http://3a0e5ae9a3fa.ngrok.io/digitize", fd, {
+        .post("http://e6a888671f20.ngrok.io/digitize", fd, {
           headers: { "x-auth-token": localStorage["x-auth-token"] },
         })
         .then((results) => {
