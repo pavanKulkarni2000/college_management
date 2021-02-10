@@ -30,7 +30,7 @@ export default function GetObjects({ user }) {
   const [records, setRecords] = useState([]);
   useEffect(() => {
     if (!user) return;
-    const url = `http://e6a888671f20.ngrok.io/digitize/${user.i_id}`;
+    const url = `http://e6a888671f20.ngrok.io git commit -m "readme"/digitize/${user.i_id}`;
     trackPromise(
       axios
         .get(url, {
