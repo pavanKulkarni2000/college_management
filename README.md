@@ -15,15 +15,10 @@ An application used college administration, built with React and Express.
 |<img width="1604" src="https://github.com/pavanKulkarni2000/college_management/blob/main/res/l_class_post.jpeg">  Lecturer: add post|  <img width="1604" src="https://github.com/pavanKulkarni2000/college_management/blob/main/res/pre_login.jpeg"> pre-login page|<img width="1604" src="https://github.com/pavanKulkarni2000/college_management/blob/main/res/s_login.jpeg"> Student: login page|<img width="1604" src="https://github.com/pavanKulkarni2000/college_management/blob/main/res/s_class_post.jpeg"> Student: class post|
 |<img width="1604" src="https://github.com/pavanKulkarni2000/college_management/blob/main/res/s_dept_post1.jpeg">  Student: dept post|  <img width="1604" src="https://github.com/pavanKulkarni2000/college_management/blob/main/res/s_placement.jpeg"> Student: placement page|<img width="1604" src="https://github.com/pavanKulkarni2000/college_management/blob/main/res/s_home_page.jpeg"> Student: home page|
 
-| | | |
-|:-------------------------:|:-------------------------:|:-------------------------:|
-|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://github.com/pavanKulkarni2000/college_management/blob/main/res/a_course.jpeg">  Amin: add course |  <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://user-images.githubusercontent.com/297678/29892310-03e92256-8d83-11e7-9b58-986dcb6f702e.png">|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://user-images.githubusercontent.com/297678/29892310-03e92256-8d83-11e7-9b58-986dcb6f702e.png">|
-|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://user-images.githubusercontent.com/297678/29892310-03e92256-8d83-11e7-9b58-986dcb6f702e.png">  |  <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://user-images.githubusercontent.com/297678/29892310-03e92256-8d83-11e7-9b58-986dcb6f702e.png">|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://user-images.githubusercontent.com/297678/29892310-03e92256-8d83-11e7-9b58-986dcb6f702e.png">|
-|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://user-images.githubusercontent.com/297678/29892310-03e92256-8d83-11e7-9b58-986dcb6f702e.png">  |  <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://user-images.githubusercontent.com/297678/29892310-03e92256-8d83-11e7-9b58-986dcb6f702e.png">|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="https://user-images.githubusercontent.com/297678/29892310-03e92256-8d83-11e7-9b58-986dcb6f702e.png">|
 
 ## Project Report
 
-
+[Project Report](res/Report_2020-21.pdf)
 
 ## Installation and Setup Instructions
 
