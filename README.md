@@ -1,7 +1,5 @@
 ## Project Name & Pitch
 
-#### Example:
-
 College Administration Management System
 
 An application used college administration, built with React and Express.
@@ -18,11 +16,9 @@ An application used college administration, built with React and Express.
 
 ## Project Report
 
-[Project Report](res/Report_2020-21.pdf)
+[Report](res/Report_2020-21.pdf)
 
 ## Installation and Setup Instructions
-
-#### Example:  
 
 Clone down this repository. You will need `node` and `npm` installed globally on your machine.  
 
