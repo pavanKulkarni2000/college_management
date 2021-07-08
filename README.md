@@ -1,6 +1,6 @@
 ## College Administration Management System
 
-An application used for college administration, built with React and Express.
+An application used for college administration, built with React and NodeJs.
 
 ## Project Screen Shots
 
